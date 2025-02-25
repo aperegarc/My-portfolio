@@ -1,42 +1,94 @@
-body {
+/* Modo oscuro */
+body.dark-mode {
   background-color: #121212;
-  padding: 0 2rem;
+  color: #f0f6fc;
+
+  button.oscuro {
+    background-color: #6200ee;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button.oscuro:hover {
+    background-color: #0098b3;
+  }
+
+  /* Submenú y enlaces en modo oscuro */
+  .submenu-contact,
+  .submenu-proyectos {
+    background-color: #333;
+    padding: 5px;
+  }
+
+  .contacto a,
+  .proyectos a {
+    color: #f0f6fc;
+  }
+
+  /* Estilo de enlaces generales */
+  a {
+    color: #f0f6fc;
+    font-weight: bold;
+  }
+
+  h1 {
+    color: #E0E0E0;
+  }
+
+  h2 {
+    color: #B0B0B0;
+  }
+
+  p {
+    color: #f0f6fc;
+  }
+
+}
+
+/* Estilos comunes */
+body {
+  transition: background-color 0.3s, color 0.3s;
   width: 60%;
   margin: 0 auto;
 }
+
+/* Modo claro (por defecto) */
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a{
+  font-weight: bold;
+  color: #000000;
+}
+
 
 .componente{
   margin-bottom: 4rem;
 }
 
-
-*{
-  
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+/* Estilos del menú */
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
 }
 
-h1{
-  color: #E0E0E0;
-}
-
-h2{
-  color: #B0B0B0;
-}
-
-p{
-  color: #f0f6fc;
-}
-
-a{
-  color: #f0f6fc;
-  font-weight: bold;
-}
-
-.hades{
+.hades {
   position: absolute;
   width: 500px;
   height: 500px;
   top: 50%;
-  left: 50%;
+  left: 35%;
   z-index: 100;
 }

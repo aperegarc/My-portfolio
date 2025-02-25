@@ -4,9 +4,12 @@ import Readme from "./Readme/Readme";
 import Menu from "./menu/Menu";
 import AboutMe from "./AboutMe/AboutMe";
 import Github from "./github/github";
+import { useEffect, useState } from "react";
 
 
 function App() {
+  
+
   return (
     <>
       <header><Menu /></header>

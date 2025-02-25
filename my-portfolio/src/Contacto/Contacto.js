@@ -1,0 +1,12 @@
+
+
+function Contacto(){
+
+
+    return(
+        <>
+        
+        </>
+    )
+
+}
