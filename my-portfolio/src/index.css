@@ -1,0 +1,42 @@
+body {
+  background-color: #121212;
+  padding: 0 2rem;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.componente{
+  margin-bottom: 4rem;
+}
+
+
+*{
+  
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1{
+  color: #E0E0E0;
+}
+
+h2{
+  color: #B0B0B0;
+}
+
+p{
+  color: #f0f6fc;
+}
+
+a{
+  color: #f0f6fc;
+  font-weight: bold;
+}
+
+.hades{
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+}

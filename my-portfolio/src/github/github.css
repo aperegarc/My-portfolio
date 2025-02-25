@@ -1,0 +1,69 @@
+/* Asegúrate de que los estilos solo se apliquen a este componente */
+.github-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 1000px;
+    margin: 20px auto;
+  }
+  
+  /* Título */
+  .github-container h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para la lista de proyectos */
+  .github-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .github-container li {
+    background-color: white;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .github-container li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Enlaces de los proyectos */
+  .github-container a {
+    font-size: 1.2rem;
+    color: #3498db;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .github-container a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Descripción de los proyectos */
+  .github-container p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin: 0;
+  }
+  
+  /* Mensaje si no hay proyectos */
+  .github-container p.no-projects {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #e74c3c;
+    font-weight: bold;
+  }
+  
