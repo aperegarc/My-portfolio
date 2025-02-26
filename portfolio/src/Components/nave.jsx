@@ -1,6 +1,6 @@
 "use client";
 
-import { frame, motion, useMotionValue, useSpring } from "motion/react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 export default function Nave() {
