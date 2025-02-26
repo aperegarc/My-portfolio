@@ -9,16 +9,30 @@ import Contacto from "./Contacto/Contacto";
 import Nave from "./Components/nave";
 import UseAnimationFrame from "./Components/UseAnimationFrame";
 
-
 function App() {
-  
-
   return (
     <>
-      <header><Menu /></header>
-      <div className="componente"><Readme /></div>
-      <div className="componente" id="github-projects"><Github /></div>
-      <div className="componente" id="contacto"><Contacto /></div>
+      <section className="secciones">
+        <div>
+          <Nave />
+          <div className="seccion-izq">
+            <div className="componente">
+              <Readme />
+              <Menu />
+            </div>
+          </div>
+        </div>
+        <div className="seccion-dcha">
+          <div className="componente" id="github-projects">
+            <Github />
+          </div>
+          <Parallax speed={10}>
+            <div className="componente" id="contacto">
+              <Contacto />
+            </div>
+          </Parallax>
+        </div>
+      </section>
     </>
   );
 }

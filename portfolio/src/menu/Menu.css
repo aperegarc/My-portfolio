@@ -1,15 +1,37 @@
 .menu{
     width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: end;
+    flex-direction: column;
+    align-items: self-start;
     gap: 3rem;
-    margin-bottom: 4rem;
+    margin-top: 4rem;
     padding: 1rem 0;
-    border-bottom: 1px solid #30363d;
 }
 
 button.oscuro{
     background-color: transparent;
     border: none;
 }
+
+.menu a {
+    text-decoration: none;
+    position: relative;
+    font-size: 20px;
+  }
+  
+  
+  .menu a::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 0; /* Comienza con un ancho de 0 */
+    height: 2px; /* Puedes ajustar el grosor del borde */
+    background-color: #f0f6fc; /* El color del borde */
+    transition: width 0.3s ease-in-out; /* Animamos el ancho */
+  }
+  
+  .menu a:hover::after {
+    width: 10rem; /* El ancho final del borde */
+  }
+  

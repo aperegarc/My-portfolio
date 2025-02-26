@@ -37,8 +37,6 @@ body.dark-mode {
 /* Estilos comunes */
 body {
   transition: background-color 0.3s, color 0.3s;
-  width: 60%;
-  margin: 0 auto;
 }
 
 /* Modo claro (por defecto) */
@@ -81,4 +79,36 @@ a{
 
 html {
   scroll-behavior: smooth;
+}
+
+.secciones{
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  justify-content: space-between;
+  padding: 0 4rem;
+  position: relative;
+}
+
+.seccion-dcha{
+  width: 50%;
+}
+
+
+.seccion-izq > div{
+  position: fixed; /* La sección se mantendrá fija al hacer scroll */
+  width: 40%;
+  z-index: 10;      /* Aseguramos que esté por encima de la sección derecha */
+  padding-top:3rem;
+}
+
+.seccion-dcha {
+  margin-left: 40%;  /* Desplazamos la sección derecha para que comience después de la izquierda */
+  padding: 20px;
+  height: 100vh;     /* Aseguramos que ocupe el alto de la ventana */
+}
+
+/* Asegura que el contenido de la derecha se desplace normalmente */
+.componente {
+  margin-bottom: 20px; /* Espaciado entre los componentes de la sección derecha */
 }
