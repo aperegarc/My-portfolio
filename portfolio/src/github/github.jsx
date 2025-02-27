@@ -28,9 +28,9 @@ function GitHub() {
           projects.map((project, index) => (
               <li className="project-item">
                 <a
+                key={index}
                   href={project.html_url}
                   target="_blank"
-                  rel="noopener noreferrer"
                 >
                   {project.name}
                 </a>

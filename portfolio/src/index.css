@@ -34,6 +34,14 @@ body.dark-mode {
 
 }
 
+.mi-nombre{
+  font-size: 50px;
+}
+
+.profesion{
+  font-size: 35px;
+}
+
 /* Estilos comunes */
 body {
   transition: background-color 0.3s, color 0.3s;
@@ -65,15 +73,6 @@ a{
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-}
-
-.hades {
-  position: absolute;
-  width: 400px;
-  height: 500px;
-  top: 50%;
-  left: 35%;
-  z-index: 100;
 }
 
 
@@ -132,4 +131,27 @@ html {
 .github-project.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media(max-width: 781px){
+  .seccion-izq>div, .oscuro{
+    position: relative;
+  }
+
+  .seccion-izq >div {
+    width: 100%;
+  }
+
+  .secciones{
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .seccion-dcha{
+    margin: 0;
+    padding-top: 0;
+    width: 100%;
+  }
+
+
 }

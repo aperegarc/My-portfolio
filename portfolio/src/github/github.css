@@ -6,7 +6,6 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 80%;
-  max-width: 1000px;
   margin: 20px auto;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -96,4 +95,15 @@ body.dark-mode .github-container p {
 
 .projects-list > li{
   margin-bottom: 2rem;
+}
+
+
+@media(max-width: 781px){
+  .github-container{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+
 }

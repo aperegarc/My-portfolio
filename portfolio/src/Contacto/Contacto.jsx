@@ -24,9 +24,9 @@ function Contacto() {
 
   return (
     <div className="contacto-menu" style={{ display: "flex", gap: "20px", marginTop: "30px", position: "relative" }}>
-      {[{ Icon: Github, href: "https://github.com", factor: 1 },
-        { Icon: Instagram, href: "https://instagram.com", factor: 1.2 },
-        { Icon: Linkedin, href: "https://linkedin.com", factor: 0.8 }].map(
+      {[{ Icon: Github, href: "https://github.com/aperegarc", factor: 1 },
+        /* { Icon: Instagram, href: "https://instagram.com", factor: 1.2 }, */
+        { Icon: Linkedin, href: "https://www.linkedin.com/in/adrian-perez-garcia-apg/", factor: 0.8 }].map(
         ({ Icon, href, factor }) => (
           <a
             key={href}
