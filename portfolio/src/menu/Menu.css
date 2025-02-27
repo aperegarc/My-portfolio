@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: self-start;
-    gap: 3rem;
+    gap: 0.5rem;
     margin-top: 4rem;
     padding: 1rem 0;
 }
@@ -35,3 +35,16 @@ button.oscuro{
     width: 10rem; /* El ancho final del borde */
   }
   
+  .rotate{
+    animation: girar 3s linear infinite;
+  }
+
+  @keyframes girar{
+    from{
+      transform: rotate(0);
+    }
+
+    to{
+      transform: rotate(360deg);
+    }
+  }

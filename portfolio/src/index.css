@@ -98,17 +98,38 @@ html {
 .seccion-izq > div{
   position: fixed; /* La sección se mantendrá fija al hacer scroll */
   width: 40%;
-  z-index: 10;      /* Aseguramos que esté por encima de la sección derecha */
+  z-index: 10; 
   padding-top:3rem;
 }
 
 .seccion-dcha {
-  margin-left: 40%;  /* Desplazamos la sección derecha para que comience después de la izquierda */
-  padding: 20px;
-  height: 100vh;     /* Aseguramos que ocupe el alto de la ventana */
+  margin-left: 40%; 
+  padding-top:3rem;
 }
 
 /* Asegura que el contenido de la derecha se desplace normalmente */
 .componente {
   margin-bottom: 20px; /* Espaciado entre los componentes de la sección derecha */
+}
+
+.oscuro{
+  position: fixed;
+  z-index: 1000;
+  left:5%;
+  transform: translate(-80%, 0%);
+}
+
+.container-scroll {
+  position: relative;
+}
+
+.github-project {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.github-project.active {
+  opacity: 1;
+  transform: translateY(0);
 }

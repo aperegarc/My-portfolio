@@ -1,8 +1,8 @@
 /* Estilos comunes para el bloque GitHub */
 .github-container {
   padding: 20px;
+  padding-top: 0;
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 80%;
@@ -15,7 +15,7 @@
 .github-container h1 {
   font-size: 2rem;
   color: #2c3e50;
-  text-align: center;
+  text-align: left;
   margin-bottom: 20px;
 }
 
@@ -70,7 +70,6 @@
 
 /* Estilos para el modo oscuro solo para el bloque GitHub */
 body.dark-mode .github-container {
-  background-color: #333;
   color: #f0f6fc;
 }
 
@@ -93,4 +92,8 @@ body.dark-mode .github-container a {
 
 body.dark-mode .github-container p {
   color: #ccc;
+}
+
+.projects-list > li{
+  margin-bottom: 2rem;
 }

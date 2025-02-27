@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "./github.css";
+import { Parallax } from "react-scroll-parallax";
 
 function GitHub() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    const username = "aperegarc"; // Reemplaza con tu usuario
+    const username = "aperegarc"; // Reemplaza con tu usuario de GitHub
 
     fetch(`https://api.github.com/users/${username}/repos`)
       .then((response) => response.json())
       .then((data) => {
-        // Verificamos si la respuesta es un array
         if (Array.isArray(data)) {
           setProjects(data);
         } else {
@@ -21,13 +21,12 @@ function GitHub() {
   }, []);
 
   return (
-    <>
-      <div className="github-container">
-        <h1>Mis Proyectos en GitHub</h1>
-        <ul>
-          {projects && projects.length > 0 ? (
-            projects.map((project) => (
-              <li key={project.id}>
+    <div className="github-container">
+      <h1>Mis Proyectos</h1>
+      <ul className="projects-list">
+        {projects.length > 0 ? (
+          projects.map((project, index) => (
+              <li className="project-item">
                 <a
                   href={project.html_url}
                   target="_blank"
@@ -35,15 +34,19 @@ function GitHub() {
                 >
                   {project.name}
                 </a>
-                <p>{project.description}</p>
+                {project.description && (
+                  <>
+                    <h3>Descripción</h3>
+                    <p>{project.description}</p>
+                  </>
+                )}
               </li>
-            ))
-          ) : (
-            <p>No se han encontrado proyectos.</p>
-          )}
-        </ul>
-      </div>
-    </>
+          ))
+        ) : (
+          <p>No se han encontrado proyectos.</p>
+        )}
+      </ul>
+    </div>
   );
 }
 
