@@ -101,11 +101,11 @@ function Pet() {
       >
         <img
           onClick={mostrarTexto}
-          src="/dog.png"
+          src="/My-portfolio/hades.jpeg"
           alt="Dog"
           style={{
             width: "50px",
-            height: "50px",
+            height: "30px",
             transform: `scaleX(${isFlipped ? -1 : 1})`,
             transition: "top 0.2s, left 0.2s",
           }}
