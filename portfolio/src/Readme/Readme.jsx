@@ -20,16 +20,15 @@ function Readme() {
 
   return (
     <>
-    <h1 className="mi-nombre">ADRIÁN PÉREZ</h1>
       <div className="readme-block">
         {/* Cambiado a readme-header para mantener consistencia con el CSS */}
         <div className="readme-header" onClick={toggleReadme}>
           <p>README</p>
           {/* Añadida clase dinámica para la flecha */}
-          <i className={`arrow ${isOpen ? "up" : ""}`}></i>
+          {/* <i className={`arrow ${isOpen ? "up" : ""}`}></i> */}
         </div>
         {/* Añadida clase dinámica para mostrar/ocultar el contenido */}
-        <div className={`readme-content ${isOpen ? "active" : ""}`}>
+        <div className={`readme-content ${isOpen ? "active-old" : ""}`}>
           <div>
             <h2>Welcome to my portfolio</h2>
             <p>

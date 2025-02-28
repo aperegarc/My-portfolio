@@ -1,12 +1,7 @@
 /* Estilos comunes para el bloque GitHub */
 .github-container {
-  padding: 20px;
-  padding-top: 0;
-  font-family: Arial, sans-serif;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 80%;
-  margin: 20px auto;
   transition: background-color 0.3s, color 0.3s;
 }
 

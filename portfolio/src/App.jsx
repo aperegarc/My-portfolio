@@ -11,24 +11,6 @@ import UseAnimationFrame from "./Components/UseAnimationFrame";
 import DarkMode from "./menu/DarkMode";
 
 function App() {
-  const [activeProject, setActiveProject] = useState(0);
-
-  const handleScroll = () => {
-    const scrollPosition = window.scrollY; // Posición del scroll en el eje Y
-    const windowHeight = window.innerHeight; // Altura de la ventana
-
-    // Calcula en qué proyecto estamos basándonos en la posición del scroll
-    const newActiveProject = Math.floor(scrollPosition / windowHeight);
-    setActiveProject(newActiveProject);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <>
@@ -38,23 +20,20 @@ function App() {
           <Nave />
           <div className="seccion-izq">
             <div className="componente">
-              <Readme />
+            <h1 className="mi-nombre">ADRIÁN PÉREZ</h1>
               <Menu />
               <Contacto />
             </div>
           </div>
         </div>
         <div className="seccion-dcha">
-          <div className="componente container-scroll" id="github-projects">
-            <div
-              className={`github-project ${
-                activeProject === 0 ? "active" : ""
-              }`}
-            >
+            <div className="container-readme">
+              <Readme />
+            </div>
+            <div className="container-github" id="github">
               <Github />
             </div>
           </div>
-        </div>
       </section>
     </>
   );

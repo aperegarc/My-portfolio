@@ -1,53 +1,65 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 function Pet() {
-  const [sentado, setSentado] = useState();
-  const [posX, setPosX] = useState();
-  const [posY, setPosY] = useState();
+  const [sentado, setSentado] = useState(false);
+  const [posX, setPosX] = useState(window.innerWidth / 2); // Posición inicial en el centro de la pantalla
+  const [posY, setPosY] = useState(window.innerHeight / 2); // Posición inicial en el centro de la pantalla
+  const [isFlipped, setIsFlipped] = useState(false); // Para voltear la imagen
+  const [textoVisible, setTextoVisible] = useState(false); // Estado para controlar la visibilidad del texto
+  const textoRef = useRef(null); // Referencia al elemento con la clase texto-perro
+
   const speed = 10;
 
   useEffect(() => {
+    // Solo mueve al perro si no está sentado
     if (sentado) return;
 
+    const menuElement = document.querySelector(".menu");
+    const menuRect = menuElement.getBoundingClientRect(); // Obtener las dimensiones del contenedor .menu
+    const maxX = menuRect.width - 50; // 50 es el tamaño de la imagen del perro
+    const maxY = menuRect.height - 50; // 50 es el tamaño de la imagen del perro
+
     const moveAnimal = () => {
-      const direccion = Math.floor(Math.random() * 4);
+      const direction = Math.floor(Math.random() * 4); // Generar dirección aleatoria
+
       setPosX((prev) => {
-        let nuevaPosX = prev; // Tomamos la posición actual
+        let nuevaPosX = prev;
 
-        // Determinamos la dirección
-        if (direction === 0) nuevaPosX += speed; // Derecha
-        if (direction === 1) nuevaPosX -= speed; // Izquierda
+        if (direction === 0) {
+          nuevaPosX += speed; // Derecha
+          setIsFlipped(false); // Imagen normal
+        }
+        if (direction === 1) {
+          nuevaPosX -= speed; // Izquierda
+          setIsFlipped(true); // Imagen volteada
+        }
 
-        // Aseguramos que no se salga de la pantalla
-        if (nuevaPosX < 0) nuevaPosX += speed; // Límite izquierdo
-        if (nuevaPosX > window.innerWidth - 50)
-          nuevaPosX = window.innerWidth - 50; // Límite derecho
-
-        return nuevaPosX; // Retornamos la nueva posición
+        // Limitar dentro de los límites del contenedor
+        nuevaPosX = Math.max(0, Math.min(maxX, nuevaPosX));
+        return nuevaPosX;
       });
 
       setPosY((prev) => {
-        let nuevaPosY = prev; // Tomamos la posición actual
+        let nuevaPosY = prev;
 
-        // Determinamos la dirección
         if (direction === 2) nuevaPosY += speed; // Abajo
         if (direction === 3) nuevaPosY -= speed; // Arriba
 
-        // Aseguramos que no se salga de la pantalla
-        if (nuevaPosY < 0) nuevaPosY = 0; // Límite superior
-        if (nuevaPosY > window.innerHeight - 50)
-          nuevaPosY = window.innerHeight - 50; // Límite inferior
-
-        return nuevaPosY; // Retornamos la nueva posición
+        // Limitar dentro de los límites del contenedor
+        nuevaPosY = Math.max(0, Math.min(maxY, nuevaPosY));
+        return nuevaPosY;
       });
     };
-  });
+
+    const moveInterval = setInterval(moveAnimal, 500); // Mueve el perro cada 500ms
+    return () => clearInterval(moveInterval);
+  }, [sentado]);
 
   useEffect(() => {
     const sitInterval = setTimeout(
       () => {
         setSentado(true);
-        setTimeout(() => setSentado(false), 2000); // Se sienta por 2 segundos
+        setTimeout(() => setSentado(false), 2000); // El perro se sienta por 2 segundos
       },
       Math.random() * 5000 + 5000
     ); // Se sienta en intervalos aleatorios
@@ -55,20 +67,63 @@ function Pet() {
     return () => clearTimeout(sitInterval);
   }, []);
 
+  // Función para mostrar el texto y añadir la clase mostrar
+  const mostrarTexto = () => {
+    if (textoRef.current) {
+      // Añadir la clase 'mostrar' y quitar la clase 'ocultar'
+      textoRef.current.classList.add("mostrar");
+      textoRef.current.classList.remove("ocultar");
+      setTextoVisible(true);
+    }
 
-  return(
-    <div
-      style={{
-        width: "50px",
-        height: "50px",
-        backgroundColor: isSitting ? "gray" : "brown",
-        position: "absolute",
-        top: `${posY}px`,
-        left: `${posX}px`,
-        transition: "transform 0.2s ease-in-out",
-      }}
-    ></div>
-  )
+    // Limpiar cualquier timeout anterior antes de añadir uno nuevo
+    clearTimeout(window.timeoutId);
 
+    // Configurar el timeout para quitar la clase 'mostrar' y añadir la clase 'ocultar'
+    window.timeoutId = setTimeout(() => {
+      if (textoRef.current) {
+        textoRef.current.classList.remove("mostrar");
+        textoRef.current.classList.add("ocultar");
+        setTextoVisible(false);
+      }
+    }, 2000); // Duración de la animación, en este caso 2 segundos
+  };
 
+  return (
+    <>
+      <div
+        style={{
+          position: "absolute",
+          zIndex: "100",
+          top: `${posY}px`,
+          left: `${posX}px`,
+        }}
+      >
+        <img
+          onClick={mostrarTexto}
+          src="/dog.png"
+          alt="Dog"
+          style={{
+            width: "50px",
+            height: "50px",
+            transform: `scaleX(${isFlipped ? -1 : 1})`,
+            transition: "top 0.2s, left 0.2s",
+          }}
+        />
+        <div className="texto-perro" ref={textoRef}>
+          {textoVisible && (
+            <p
+              style={{
+                width: "12rem",
+              }}
+            >
+              "Este es Hades"
+            </p>
+          )}
+        </div>
+      </div>
+    </>
+  );
 }
+
+export default Pet;

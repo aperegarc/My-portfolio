@@ -21,30 +21,32 @@ body.dark-mode {
   }
 
   h1 {
-    color: #E0E0E0;
+    color: #e0e0e0;
   }
 
   h2 {
-    color: #B0B0B0;
+    color: #b0b0b0;
   }
 
   p {
     color: #f0f6fc;
   }
-
 }
 
-.mi-nombre{
+.mi-nombre {
   font-size: 50px;
+  margin-bottom: 0;
 }
 
-.profesion{
+.profesion {
   font-size: 35px;
 }
 
 /* Estilos comunes */
 body {
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 /* Modo claro (por defecto) */
@@ -54,16 +56,15 @@ body {
 }
 
 * {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-a{
+a {
   font-weight: bold;
   color: #000000;
 }
 
-
-.componente{
+.componente {
   margin-bottom: 4rem;
 }
 
@@ -75,12 +76,11 @@ a{
   padding: 20px;
 }
 
-
 html {
   scroll-behavior: smooth;
 }
 
-.secciones{
+.secciones {
   display: flex;
   flex-direction: row;
   gap: 4rem;
@@ -89,32 +89,49 @@ html {
   position: relative;
 }
 
-.seccion-dcha{
+.seccion-dcha {
   width: 50%;
 }
 
-
-.seccion-izq > div{
+.seccion-izq > div {
   position: fixed; /* La sección se mantendrá fija al hacer scroll */
   width: 40%;
-  z-index: 10; 
-  padding-top:3rem;
+  z-index: 10;
+  padding-top: 3rem;
 }
 
 .seccion-dcha {
-  margin-left: 40%; 
-  padding-top:3rem;
+  padding-top: 6rem;
 }
+
+.seccion-dcha > div {
+  width: 100%;
+  margin-bottom: 10rem;
+}
+
+.texto-perro {
+  opacity: 0;
+  transition: opacity 1s ease; /* Transición global de opacidad */
+}
+
+.texto-perro.mostrar {
+  opacity: 1;
+}
+
+.texto-perro.ocultar {
+  opacity: 0;
+}
+
 
 /* Asegura que el contenido de la derecha se desplace normalmente */
 .componente {
   margin-bottom: 20px; /* Espaciado entre los componentes de la sección derecha */
 }
 
-.oscuro{
+.oscuro {
   position: fixed;
   z-index: 1000;
-  left:5%;
+  left: 5%;
   transform: translate(-80%, 0%);
 }
 
@@ -122,36 +139,24 @@ html {
   position: relative;
 }
 
-.github-project {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.github-project.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media(max-width: 781px){
-  .seccion-izq>div, .oscuro{
+@media (max-width: 781px) {
+  .seccion-izq > div,
+  .oscuro {
     position: relative;
   }
 
-  .seccion-izq >div {
+  .seccion-izq > div {
     width: 100%;
   }
 
-  .secciones{
+  .secciones {
     flex-direction: column;
     justify-content: center;
   }
 
-  .seccion-dcha{
+  .seccion-dcha {
     margin: 0;
     padding-top: 0;
     width: 100%;
   }
-
-
 }
