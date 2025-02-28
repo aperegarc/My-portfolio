@@ -8,7 +8,7 @@ function Menu() {
 
   return (
     <section className="menu">
-      {/* <Pet /> */}
+      <Pet />
       <div className="proyectos">
         <a href="#github">PROJECTS</a>
         <div className="submenu-proyectos"></div>
