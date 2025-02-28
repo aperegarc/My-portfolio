@@ -145,6 +145,10 @@ html {
     position: relative;
   }
 
+  .oscuro{
+    transform: none;
+  }
+
   .seccion-izq > div {
     width: 100%;
   }
@@ -159,4 +163,5 @@ html {
     padding-top: 0;
     width: 100%;
   }
+
 }

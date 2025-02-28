@@ -67,7 +67,9 @@ function Readme() {
             <p>MySql</p>
             <p>Python</p>
           </div>
+          <div className="container-cube">
           <CubeComponent />
+          </div>
         </div>
       </div>
     </>
