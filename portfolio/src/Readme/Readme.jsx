@@ -30,7 +30,7 @@ function Readme() {
         {/* Añadida clase dinámica para mostrar/ocultar el contenido */}
         <div className={`readme-content ${isOpen ? "active-old" : ""}`}>
           <div>
-            <h2>Welcome to my portfolio</h2>
+            <h2>Bienvenido a mi portfolio</h2>
             <p>
               Me llamo Adrián Pérez y tengo 22 años. Cumplo el 6 de Septiembre.
               Vivo actualmente en A Coruña, vine hace casi medio año desde
@@ -48,15 +48,15 @@ function Readme() {
           </div>
           <div>
             <h2>About me</h2>
-            <p>📚 I'm currently learning React and SpringBoot.</p>
+            <p>📚 Actualmente me estoy formando en SpringBoot y React</p>
             <p>
-              🎯 Goals: To build a solid foundation in any area of programming.
+              🎯 Metas: Tener la capacidad para dirigir un equipo.
             </p>
-            <p>🎲 Fun fact: I can count in binary using my hands.</p>
+            <p>🎲 Curiosidad: Puedo contar en binario usando mis manos</p>
           </div>
           {/* Añadida clase skills para los badges de habilidades */}
           <div className="skills">
-            <h2>My Skills</h2>
+            <h2>Skills</h2>
             <p>Java</p>
             <p>SpringBoot</p>
             <p>JavaScript</p>
