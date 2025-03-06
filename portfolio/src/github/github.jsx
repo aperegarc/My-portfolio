@@ -23,8 +23,8 @@ function GitHub() {
 
   // Lista de repositorios que deseas mostrar
   const repositoriosParaMostrar = [
-    "SpringUsers",
-    "My-portfolio"
+    "SpringProjects",
+    "Filtro-post-y-taxonomia-para-WordPress"
     // Agrega los nombres de los repositorios que deseas incluir
   ];
 
