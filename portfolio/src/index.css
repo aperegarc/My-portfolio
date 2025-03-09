@@ -21,32 +21,22 @@ body.dark-mode {
   }
 
   h1 {
-    color: #e0e0e0;
+    color: #E0E0E0;
   }
 
   h2 {
-    color: #b0b0b0;
+    color: #B0B0B0;
   }
 
   p {
     color: #f0f6fc;
   }
-}
 
-.mi-nombre {
-  font-size: 50px;
-  margin-bottom: 0;
-}
-
-.profesion {
-  font-size: 35px;
 }
 
 /* Estilos comunes */
 body {
-  transition:
-    background-color 0.3s,
-    color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* Modo claro (por defecto) */
@@ -56,15 +46,16 @@ body {
 }
 
 * {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-a {
+a{
   font-weight: bold;
   color: #000000;
 }
 
-.componente {
+
+.componente{
   margin-bottom: 4rem;
 }
 
@@ -76,11 +67,21 @@ a {
   padding: 20px;
 }
 
+.hades {
+  position: absolute;
+  width: 400px;
+  height: 500px;
+  top: 50%;
+  left: 35%;
+  z-index: 100;
+}
+
+
 html {
   scroll-behavior: smooth;
 }
 
-.secciones {
+.secciones{
   display: flex;
   flex-direction: row;
   gap: 4rem;
@@ -89,79 +90,53 @@ html {
   position: relative;
 }
 
-.seccion-dcha {
+.seccion-dcha{
   width: 50%;
 }
 
-.seccion-izq > div {
+
+.seccion-izq > div{
   position: fixed; /* La sección se mantendrá fija al hacer scroll */
   width: 40%;
-  z-index: 10;
-  padding-top: 3rem;
+  z-index: 10;      /* Aseguramos que esté por encima de la sección derecha */
+  padding-top:3rem;
 }
 
 .seccion-dcha {
-  padding-top: 6rem;
+  margin-left: 40%;  /* Desplazamos la sección derecha para que comience después de la izquierda */
+  padding: 20px;
+  padding-top:3rem;
 }
-
-.seccion-dcha > div {
-  width: 100%;
-  margin-bottom: 10rem;
-}
-
-.texto-perro {
-  opacity: 0;
-  transition: opacity 1s ease; /* Transición global de opacidad */
-}
-
-.texto-perro.mostrar {
-  opacity: 1;
-}
-
-.texto-perro.ocultar {
-  opacity: 0;
-}
-
 
 /* Asegura que el contenido de la derecha se desplace normalmente */
 .componente {
   margin-bottom: 20px; /* Espaciado entre los componentes de la sección derecha */
 }
 
-.oscuro {
-  position: fixed;
-  z-index: 1000;
-  left: 5%;
-  transform: translate(-80%, 0%);
+.container-contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
 }
 
-.container-scroll {
-  position: relative;
+.redes {
+  display: flex;
+  justify-content: center;
+  gap: 3rem; /* Ajusta el espacio entre los elementos */
+  margin-top: 2rem;
 }
 
-@media (max-width: 781px) {
-  .seccion-izq > div,
-  .oscuro {
-    position: relative;
-  }
+.red-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .oscuro{
-    transform: none;
-  }
-
-  .seccion-izq > div {
-    width: 100%;
-  }
-
-  .secciones {
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .seccion-dcha {
-    margin: 0;
-    padding-top: 0;
-    width: 100%;
-  }
-
+.red-item p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
 }
